@@ -38,7 +38,7 @@ public class Lobster extends Actor
         }else{
             w.removeObject(this);
             w.lobster = new Lobster();
-            w.addObject(this,Greenfoot.getRandomNumber(w.getWidth()-10)+5,Greenfoot.getRandomNumber(w.getHeight()-10)+5);
+            w.addObject(w.lobster,Greenfoot.getRandomNumber(w.getWidth()-10)+5,Greenfoot.getRandomNumber(w.getHeight()-10)+5);
             w.lobster.ifNear();
         }
     }

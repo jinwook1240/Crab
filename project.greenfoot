@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Sun Nov 20 12:20:06 KST 2016
+#Sun Nov 20 12:57:26 KST 2016
 dependency9.type=UsesDependency
 target4.type=InterfaceTarget
 <<<<<<<=HEAD
@@ -64,13 +64,13 @@ target1.type=ClassTarget
 target7.y=10
 target7.x=70
 dependency9.to=Crab
-editor.swing.0.width=700
+editor.swing.0.width=1382
 target7.name=MyWorld
 class.Worm.image=worm.png
-editor.swing.0.y=12
+editor.swing.0.y=-8
 target6.y=130
 target1.typeParameters=
-editor.swing.0.x=387
+editor.swing.0.x=-8
 target6.x=190
 target2.height=50
 target5.y=70
@@ -101,7 +101,7 @@ dependency10.from=Worm
 target2.name=Turtle
 readme.name=@README
 package.numDependencies=11
-simulation.speed=59
+simulation.speed=50
 dependency10.type=UsesDependency
 class.Turtle.image=turtle.png
 dependency8.from=Lobster
@@ -115,7 +115,7 @@ target5.typeParameters=
 world.lastInstantiated=MyWorld
 target2.showInterface=false
 mainWindow.height=744
-editor.swing.0.height=700
+editor.swing.0.height=744
 dependency11.from=Worm
 target3.name=Lobster
 target7.height=50
