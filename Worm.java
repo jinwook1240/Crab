@@ -21,4 +21,16 @@ public class Worm extends Actor
             getWorld().removeObject(this);
         }
     }
+    
+    public void ifNear(int num){
+        MyWorld w = (MyWorld)getWorld();
+        if(!isTouching(Crab.class)){
+            return;
+        }else{
+            w.removeObject(w.worm[num]);
+            w.worm[num] = new Worm();
+            w.addObject(w.worm[num],Greenfoot.getRandomNumber(w.getWidth()-10)+5,Greenfoot.getRandomNumber(w.getHeight()-10)+5);
+            w.worm[num].ifNear(num);
+        }
+    }
 }

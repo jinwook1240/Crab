@@ -10,6 +10,10 @@ public class Turtle extends Lobster implements Freezable
 {
     int counter=0;
     int j = 0;
+    public Turtle(){
+        super();
+        super.enemy=false;
+    }
     /**
      * Act - do whatever the Turtle wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.

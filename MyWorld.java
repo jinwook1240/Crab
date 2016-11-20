@@ -12,7 +12,8 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
-    Worm[] worm = new Worm[8];
+    public Lobster lobster;
+    public Worm[] worm = new Worm[8];
     Crab crab = new Crab();
     public MyWorld()
     {    
@@ -29,17 +30,18 @@ public class MyWorld extends World
         addWorm();
     }
     public void addLobster(){
-        Lobster lobster = new Lobster();
+        lobster = new Lobster();
         addObject(lobster,Greenfoot.getRandomNumber(getWidth()-10)+5,Greenfoot.getRandomNumber(getHeight()-10)+5);
-        crab.ifNear(lobster);
+        lobster.ifNear();
     }
     public void addWorm(){
         for(int i=0;i<worm.length;i++){
             if(worm[i].getWorld()!=this){
                 worm[i] = new Worm();
                 addObject(worm[i],Greenfoot.getRandomNumber(getWidth()-10)+5,Greenfoot.getRandomNumber(getHeight()-10)+5);
-                crab.ifNear(worm[i]);
+                worm[i].ifNear(i);
             }
         }
     }
+    
 }

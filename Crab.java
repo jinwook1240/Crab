@@ -46,18 +46,9 @@ public class Crab extends Actor
             if(score != lobstercount&&score%100==0){
                 lobstercount = score;
                 ((MyWorld)getWorld()).addLobster();
+                for(int i=0;i<score/500;i++)((MyWorld)getWorld()).addLobster();
             }
     }
     if(isAtEdge())turn(Greenfoot.getRandomNumber(100)+130);
 }
-
-    public void ifNear(Actor actor){
-        if(getNeighbours(15,false,Actor.class).indexOf(actor)==-1){
-            return;
-        }else{
-            getWorld().removeObject(actor);
-            getWorld().addObject(actor,Greenfoot.getRandomNumber(getWorld().getWidth()-10)+5,Greenfoot.getRandomNumber(getWorld().getHeight()-10)+5);
-            ifNear(actor);
-        }
-    }
 }

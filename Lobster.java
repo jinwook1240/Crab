@@ -14,8 +14,13 @@ public class Lobster extends Actor
      */
     int i=0;
     int speed = 1;
+    boolean enemy=true;
     public void act() 
     {
+        if(isTouching(Crab.class)&&enemy){
+            System.out.println("touched Lobster");
+            Greenfoot.stop();
+        }
         move(speed);
         i++;
         if(isAtEdge())turn(Greenfoot.getRandomNumber(360));
@@ -26,4 +31,15 @@ public class Lobster extends Actor
         
         // Add your action code here.
     }    
+    public void ifNear(){
+        MyWorld w = (MyWorld)getWorld();
+        if(!isTouching(Crab.class)){
+            return;
+        }else{
+            w.removeObject(this);
+            w.lobster = new Lobster();
+            w.addObject(this,Greenfoot.getRandomNumber(w.getWidth()-10)+5,Greenfoot.getRandomNumber(w.getHeight()-10)+5);
+            w.lobster.ifNear();
+        }
+    }
 }
