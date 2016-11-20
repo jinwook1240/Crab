@@ -12,6 +12,7 @@ public class Crab extends Actor
     public int score=0;
     private int speed=4;
     GreenfootImage background;
+    public int lobstercount = 0;
     public void addedToWorld(World world){
         background = world.getBackground();
     }
@@ -42,7 +43,21 @@ public class Crab extends Actor
             scoreadd.setColor(Color.black);
             scoreadd.drawString("점수 : "+score,20,20);
             getWorld().setBackground(scoreadd);
+            if(score != lobstercount&&score%100==0){
+                lobstercount = score;
+                ((MyWorld)getWorld()).addLobster();
+            }
     }
     if(isAtEdge())turn(Greenfoot.getRandomNumber(100)+130);
 }
+
+    public void ifNear(Actor actor){
+        if(getNeighbours(15,false,Actor.class).indexOf(actor)==-1){
+            return;
+        }else{
+            getWorld().removeObject(actor);
+            getWorld().addObject(actor,Greenfoot.getRandomNumber(getWorld().getWidth()-10)+5,Greenfoot.getRandomNumber(getWorld().getHeight()-10)+5);
+            ifNear(actor);
+        }
+    }
 }
