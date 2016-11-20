@@ -15,11 +15,12 @@ public class Lobster extends Actor
     int i=0;
     int speed = 1;
     boolean enemy=true;
-    public void act() 
+    public void act()
     {
         if(isTouching(Crab.class)&&enemy){
             System.out.println("touched Lobster");
             Greenfoot.stop();
+            if(MyWorld.nocheat)System.exit(1);
         }
         move(speed);
         i++;

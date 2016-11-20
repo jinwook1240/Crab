@@ -12,6 +12,7 @@ public class MyWorld extends World
      * Constructor for objects of class MyWorld.
      * 
      */
+    public static boolean nocheat = false;
     public Lobster lobster;
     public Worm[] worm = new Worm[8];
     Crab crab = new Crab();
